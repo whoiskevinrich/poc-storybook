@@ -6,6 +6,7 @@ import router from "./router";
 
 import "./assets/main.css";
 import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(PiniaVuePlugin);
 Vue.use(ElementUI);
