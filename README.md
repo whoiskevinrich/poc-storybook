@@ -57,3 +57,59 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```sh
 npm run lint
 ```
+
+## Install ElementUI
+
+### npm
+
+```sh
+npm i element-ui -S
+```
+
+### Update main.ts
+
+Import ElementUI and the CSS, then add the directives for Vue to use.
+
+```typescript
+// main.ts
+import "..."
+
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+
+Vue.use(...);
+Vue.use(ElementUI);
+
+new Vue({
+    //...
+    render: (h) => h(App),
+}).$mount("#app");
+```
+
+### Add Component
+
+```typescript
+// Elements.vue
+<template>
+  <div>
+    <el-input placeholder="Please Input" v-model="input"></el-input>
+  </div>
+</template>
+```
+
+### Replace component in launch page
+```typescript
+<script setup lang="ts">
+import Elements from "@/components/Elements.vue";
+</script>
+
+<template>
+  <main>
+    <!-- <TheWelcome /> -->
+    <Elements/>
+  </main>
+</template>
+```
+
+![Completed ElementUI Install](./docs/element-ui-install.jpg)
+
